@@ -89,8 +89,8 @@ ax.set_zlim3d([-border, border])
 def animate(i):
     global x, y, z, numPts
     ax.clear()
-    ax.set_xlim3d([-border, border])
-    ax.set_ylim3d([-border, border])
+    ax.set_xlim3d([0, border])
+    ax.set_ylim3d([0, border])
     ax.set_zlim3d([-border, border])
     idx0 = i * numPts
     idx1 = numPts * (i + 1)
@@ -98,5 +98,5 @@ def animate(i):
 
 ani = animation.FuncAnimation(fig, animate, frames=numFrames, interval=1, blit=False, repeat=False)
 #save outout as .gif
-#ani.save('animation.gif', writer='imagemagick', fps=60)
-plt.show()
+ani.save('3d_plot.gif',dpi=50, writer='imagemagick', fps=31)
+#plt.show()
